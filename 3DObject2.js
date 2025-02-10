@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   renderer2.setSize(window.innerWidth, window.innerHeight, false);
 
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+
   const controls2 = new THREE.OrbitControls(camera2, renderer2.domElement);
   controls2.enableZoom = false;
   controls2.enablePan = false;
@@ -99,6 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
         THREE.MathUtils.lerp(model2.rotation.x, -mouseY * Math.PI * 0.1, 0.03),
         -0.3, 0.3
       );
+
+      if (isMobile) {
+
+
+        controls2.enableRotate = false;
+
+      }
     }
 
     renderer2.render(scene2, camera2);
