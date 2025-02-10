@@ -23,5 +23,7 @@ gsap.to("#headerSection", {
 
 });
 
-
+window.addEventListener("load", () => {
+    document.getElementById("pageLoader").style.display = "none";
+  });
 

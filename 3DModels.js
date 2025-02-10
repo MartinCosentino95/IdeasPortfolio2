@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.set(0, 2, 5);
@@ -45,16 +47,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    (xhr) => console.log(`Cargando: ${(xhr.loaded / xhr.total) * 100}%`),
+    (xhr) => console.log(`Cargando: ${(xhr.loaded / xhr.total) * 100} %`),
     (error) => console.error("Error cargando el modelo:", error)
   );
 
   // Rotación automática con el mouse
   window.addEventListener("mousemove", (event) => {
-    const halfWidth = window.innerWidth / 2;
-    const halfHeight = window.innerHeight / 2;
+    const halfWidth = window.innerWidth / 1;
+    const halfHeight = window.innerHeight / 1;
     mouseX = (event.clientX - halfWidth) / halfWidth;
     mouseY = (event.clientY - halfHeight) / halfHeight;
+
+    // Ajustar la posición de la cámara sutilmente
+    camera.position.x = mouseX * 0.2; // Cambia este valor para mayor o menor movimiento
+    camera.position.y = 2 + mouseY * 0.5;
+    camera.lookAt(scene.position); // Mantener la mirada en el objeto
   });
 
   // Ajustar la relación de aspecto al redimensionar
@@ -64,14 +71,23 @@ document.addEventListener("DOMContentLoaded", () => {
     renderer.setSize(window.innerWidth, window.innerHeight, false);
   });
 
+  // Activar rotación automática
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.5; // Ajusta la velocidad de rotación (valor positivo gira en sentido horario, negativo en antihorario)
+
   // Animación y render loop
   function animate() {
     requestAnimationFrame(animate);
+    controls.update(); // Necesario para que OrbitControls funcione
+
 
     if (model) {
+
       model.rotation.y = THREE.MathUtils.lerp(model.rotation.y, mouseX * Math.PI * 0.3, 0.05);
       model.rotation.x = THREE.MathUtils.clamp(THREE.MathUtils.lerp(model.rotation.x, -mouseY * Math.PI * 0.1, 0.05), -0.3, 0.3);
     }
+
+
 
     renderer.render(scene, camera);
   }
