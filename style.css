@@ -91,12 +91,17 @@ header::before {
   margin: auto;
   overflow-x: hidden;
   display: block;
+  background-color: transparent;
+  animation: tornasol 4s infinite alternate;
+  filter: drop-shadow(2px 4px 6px black);
+  z-index: 8;
 }
 .section1-model-container {
-  width: auto;
-  height: 100%;
+  background-color: white;
   position: relative;
-  min-height: 480px;
+  overflow: hidden;
+  z-index: 9;
+  min-height: 580px;
 }
 .section1-title {
   font-size: 126px;
@@ -106,6 +111,14 @@ header::before {
   font-family: "Prompt", serif;
 }
 
+@keyframes tornasol {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
 body {
   overflow-x: hidden;
 }/*# sourceMappingURL=style.css.map */
