@@ -8,22 +8,41 @@ banner.innerHTML += text; // Duplicamos el contenido para evitar cortes
 
 // Creamos la animación de desplazamiento infinito
 gsap.to(".mcportfolio-banner-title-tracker", {
-    x: "-50%",  // Mueve el contenedor a la izquierda
-    duration: 12, // Ajusta la velocidad
+    x: "-50%", // Se mueve la mitad del ancho
+    duration: 25, // Velocidad de la animación
     ease: "linear",
-    repeat: -1,
+    repeat: -1, // Se repite infinito
+
 });
 
 
 gsap.to("#headerSection", {
-    clipPath: "circle(100% at 50% 50%)",
     duration: 1.5,
     ease: "power2.out",
     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", // Rectángulo
 
 });
 
+gsap.to("#section1", {
+    scrollTrigger: {
+        trigger: "#section1",
+        scroll: "body",
+        start: "top 80%",
+        end: "top 0%",
+        markers: false,
+
+        toggleActions: "restart none none reverse"
+      },
+
+      clipPath: "circle(100% at 50% 50%)",
+      duration: 2.5,
+      ease: "power2.out",
+      opacity: 1,
+
+});
+
+
 window.addEventListener("load", () => {
     document.getElementById("pageLoader").style.display = "none";
-  });
+});
 

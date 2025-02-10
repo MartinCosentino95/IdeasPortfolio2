@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.set(0, 2, 5);
@@ -11,12 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
     alpha: true
   });
   renderer.setSize(window.innerWidth, window.innerHeight, false);
+  
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
-  // Controles pero SIN interacción con clic
+
+  // Controles sin interacción manual
   const controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableZoom = false;
   controls.enablePan = false;
   controls.enableRotate = false;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.3;
 
   // Luces
   scene.add(new THREE.AmbientLight(0xffffff, 1));
@@ -26,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let model;
   let mouseX = 0, mouseY = 0;
-  const clock = new THREE.Clock();
 
   // Cargar modelo GLB
   const loader = new THREE.GLTFLoader();
@@ -41,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
       model.traverse((child) => {
         if (child.isMesh) {
           child.material = new THREE.MeshBasicMaterial({
-            color: 0x000000, // Negro
-            wireframe: true  // Activar wireframe
+            color: 0x000000,
+            wireframe: true
           });
         }
       });
@@ -51,19 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
     (error) => console.error("Error cargando el modelo:", error)
   );
 
-  // Rotación automática con el mouse
-  window.addEventListener("mousemove", (event) => {
-    const halfWidth = window.innerWidth / 1;
-    const halfHeight = window.innerHeight / 1;
-    mouseX = (event.clientX - halfWidth) / halfWidth;
-    mouseY = (event.clientY - halfHeight) / halfHeight;
-
-    // Ajustar la posición de la cámara sutilmente
-    camera.position.x = mouseX * 0.2; // Cambia este valor para mayor o menor movimiento
-    camera.position.y = 2 + mouseY * 0.5;
-    camera.lookAt(scene.position); // Mantener la mirada en el objeto
-  });
-
   // Ajustar la relación de aspecto al redimensionar
   window.addEventListener("resize", () => {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -71,23 +60,35 @@ document.addEventListener("DOMContentLoaded", () => {
     renderer.setSize(window.innerWidth, window.innerHeight, false);
   });
 
-  // Activar rotación automática
-  controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.5; // Ajusta la velocidad de rotación (valor positivo gira en sentido horario, negativo en antihorario)
+  // 🔹 Aplicamos mousemove en todos los dispositivos (incluyendo mobile)
+  window.addEventListener("mousemove", (event) => {
+    const halfWidth = window.innerWidth / 2;
+    const halfHeight = window.innerHeight / 2;
+    mouseX = (event.clientX - halfWidth) / halfWidth;
+    mouseY = (event.clientY - halfHeight) / halfHeight;
+  });
 
   // Animación y render loop
   function animate() {
     requestAnimationFrame(animate);
-    controls.update(); // Necesario para que OrbitControls funcione
-
+    controls.update();
 
     if (model) {
+      // 🔹 El modelo responde al movimiento del mouse/touch en todos los dispositivos
+      model.rotation.y = THREE.MathUtils.lerp(model.rotation.y, mouseX * Math.PI * 0.3, 0.03);
+      model.rotation.x = THREE.MathUtils.clamp(
+        THREE.MathUtils.lerp(model.rotation.x, -mouseY * Math.PI * 0.1, 0.03),
+        -0.3, 0.3
+      );
 
-      model.rotation.y = THREE.MathUtils.lerp(model.rotation.y, mouseX * Math.PI * 0.3, 0.05);
-      model.rotation.x = THREE.MathUtils.clamp(THREE.MathUtils.lerp(model.rotation.x, -mouseY * Math.PI * 0.1, 0.05), -0.3, 0.3);
+      // 🔹 Evita que el modelo gire más de 90° hacia atrás
+      model.rotation.y = THREE.MathUtils.clamp(model.rotation.y, -Math.PI / 2, Math.PI / 2);
+
+      if (!isMobile){
+        controls.autoRotateSpeed = 0.2;
+
+      }
     }
-
-
 
     renderer.render(scene, camera);
   }

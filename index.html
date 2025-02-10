@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
     <!-- Loader -->
     <div id="pageLoader">
       <div class="spinner"></div>
@@ -44,9 +43,7 @@
               <div class="mcportfolio-banner-container">
                 <!-- Marquesina -->
                 <div class="mcportfolio-banner-title-tracker">
-                  <h1 class="mcportfolio-banner-title">
-                    /* MARTIN COSENTINO */
-                  </h1>
+                  <h1 class="mcportfolio-banner-title">/*MARTIN COSENTINO*/</h1>
                 </div>
 
                 <!-- 3D Object -->
@@ -61,11 +58,42 @@
       </section>
     </header>
 
-    <section class="my-5">
-      <div class="container">
+    <section class="my-5" id="section1">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
-            <h2>aslds</h2>
+          <div class="col-lg-5">
+            <h2 class="section1-title">Sobre mí</h2>
+            <p class="section1-text">
+              Soy un desarrollador front-end con experiencia en HTML, CSS y
+              JavaScript, con un fuerte espíritu autodidacta que me impulsa a
+              explorar nuevas tecnologías y desafiar los límites de lo
+              convencional. Mi curiosidad me llevó a sumergirme en Three.js y
+              GSAP, herramientas con las que busco transformar experiencias
+              digitales en algo más que simples interfaces: en espacios
+              interactivos que cautiven y sorprendan. Más allá del código, mi
+              camino también ha pasado por la creación de contenido digital,
+              desde el streaming hasta la producción de videos para redes
+              sociales. Esta combinación de habilidades me ha permitido
+              desarrollar un enfoque único, donde la creatividad y la tecnología
+              convergen para ofrecer soluciones innovadoras con un sello
+              personal. Actualmente, estoy trabajando en un nuevo portfolio con
+              elementos en 3D y animaciones envolventes, fusionando mis
+              conocimientos en desarrollo web con experiencias inmersivas.
+              Siempre estoy en la búsqueda de las últimas tendencias y
+              herramientas para llevar mis proyectos al siguiente nivel, sin
+              miedo a experimentar ni a emprender nuevos caminos por mi cuenta.
+              Mi objetivo es seguir creciendo profesionalmente, ampliando mis
+              habilidades en back-end con Node.js y certificando mi nivel de
+              inglés para abrir nuevas oportunidades en el ámbito internacional.
+              Si buscas a alguien que combine precisión técnica, creatividad y
+              una mentalidad de aprendizaje constante, estoy listo para el
+              desafío.
+            </p>
+          </div>
+          <div class="col-lg-7">
+            <div class="section1-model-container">
+              <canvas class="w-100 section1-model" id="3DObject2"></canvas>
+            </div>
           </div>
         </div>
       </div>
@@ -77,6 +105,7 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
 
     <script src="index.js"></script>
-    <script type="module" src="3DModels.js"></script>
+    <script type="module" src="3DHeader.js"></script>
+    <script type="module" src="3DObject2.js"></script>
   </body>
 </html>

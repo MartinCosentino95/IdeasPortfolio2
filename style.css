@@ -25,6 +25,7 @@
   width: -moz-max-content;
   width: max-content; /* Importante para evitar cortes */
   overflow: hidden;
+  white-space: nowrap;
 }
 .mcportfolio-banner-title-container {
   overflow-x: hidden;
@@ -73,6 +74,38 @@ header::before {
     filter: hue-rotate(360deg);
   }
 }
+#section1 {
+  -webkit-clip-path: circle(0% 0%, 0% 100%, 100% 100%);
+          clip-path: circle(0% 0%, 0% 100%, 100% 100%);
+  opacity: 0;
+}
+
+.section1-model {
+  position: absolute;
+  height: 100% !important;
+  width: 100% !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  overflow-x: hidden;
+  display: block;
+}
+.section1-model-container {
+  width: auto;
+  height: 100%;
+  position: relative;
+  min-height: 480px;
+}
+.section1-title {
+  font-size: 126px;
+  font-family: "Prompt", serif;
+}
+.section1-text {
+  font-family: "Prompt", serif;
+}
+
 body {
   overflow-x: hidden;
 }/*# sourceMappingURL=style.css.map */

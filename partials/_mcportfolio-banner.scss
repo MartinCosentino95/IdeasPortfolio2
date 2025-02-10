@@ -27,6 +27,8 @@
             gap: 5rem; /* Espacio entre textos */
             width: max-content; /* Importante para evitar cortes */
             overflow: hidden;
+            white-space: nowrap;
+
         }
 
         &-container {
