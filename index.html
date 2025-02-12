@@ -26,17 +26,28 @@
       href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Loader -->
     <div id="pageLoader">
       <div class="spinner"></div>
-      <p>Cargando página...</p>
+      <p>Bienvenido!</p>
     </div>
 
     <header id="headerSection">
-      <section class="mb-5 mcportfolio-banner">
+      <section class="pb-5 mcportfolio-banner">
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
@@ -58,11 +69,11 @@
       </section>
     </header>
 
-    <section class="my-5" id="section1">
+    <section class="py-5" id="section1">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6">
-            <h2 class="section1-title">Sobre mí</h2>
+          <div class="col-lg-5">
+            <h2 class="section1-title">Sobre mí ~/*</h2>
             <p class="section1-text">
               Soy un desarrollador front-end con experiencia en HTML, CSS y
               JavaScript, con un fuerte espíritu autodidacta que me impulsa a
@@ -70,16 +81,8 @@
               convencional. Mi curiosidad me llevó a sumergirme en Three.js y
               GSAP, herramientas con las que busco transformar experiencias
               digitales en algo más que simples interfaces: en espacios
-              interactivos que cautiven y sorprendan. Más allá del código, mi
-              camino también ha pasado por la creación de contenido digital,
-              desde el streaming hasta la producción de videos para redes
-              sociales. Esta combinación de habilidades me ha permitido
-              desarrollar un enfoque único, donde la creatividad y la tecnología
-              convergen para ofrecer soluciones innovadoras con un sello
-              personal. Actualmente, estoy trabajando en un nuevo portfolio con
-              elementos en 3D y animaciones envolventes, fusionando mis
-              conocimientos en desarrollo web con experiencias inmersivas.
-              Siempre estoy en la búsqueda de las últimas tendencias y
+              interactivos que cautiven y sorprendan.
+              <!-- Siempre estoy en la búsqueda de las últimas tendencias y
               herramientas para llevar mis proyectos al siguiente nivel, sin
               miedo a experimentar ni a emprender nuevos caminos por mi cuenta.
               Mi objetivo es seguir creciendo profesionalmente, ampliando mis
@@ -87,13 +90,47 @@
               inglés para abrir nuevas oportunidades en el ámbito internacional.
               Si buscas a alguien que combine precisión técnica, creatividad y
               una mentalidad de aprendizaje constante, estoy listo para el
-              desafío.
+              desafío. -->
             </p>
+            <!-- Call to action -->
+            <a href="#" class="mcportfolio-button mt-3">Click aqui</a>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-7">
             <div class="section1-model-container">
               <canvas class="w-100 section1-model" id="3DObject2"></canvas>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5" id="sectionBG">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 model-bg-container">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="model-bg-title-container">
+                  <h1 class="model-bg-title">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </h1>
+
+                  <div class="model-bg-links">
+                    <a href="mailto:martincosentino95@gmail.com"><i class="fa-regular fa-envelope"></i></a
+                    ><a href="https://wa.me/+549346811570"
+                      ><i class="fa-brands fa-whatsapp"></i></a
+                    ><a href="https://github.com/MartinCosentino95"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <canvas
+              class="model-bg"
+              id="3Dbg"
+              style="position: absolute; top: 0"
+            ></canvas>
           </div>
         </div>
       </div>
@@ -104,8 +141,9 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
 
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
     <script type="module" src="3DHeader.js"></script>
     <script type="module" src="3DObject2.js"></script>
+    <script type="module" src="3Dbg.js"></script>
   </body>
 </html>

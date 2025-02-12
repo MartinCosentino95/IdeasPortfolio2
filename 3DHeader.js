@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     alpha: true
   });
   renderer.setSize(window.innerWidth, window.innerHeight, false);
-  
+
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
 
@@ -48,8 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }
       });
+      // 🚀 ¡Aumentamos el contador y revisamos si todos los modelos están listos!
+      window.modelsLoaded++;
+      window.checkAllModelsLoaded();
     },
-    (xhr) => console.log(`Cargando: ${(xhr.loaded / xhr.total) * 100} %`),
+    (xhr) => console.log(`Cargando modelo 1: ${(xhr.loaded / xhr.total) * 100} %`),
     (error) => console.error("Error cargando el modelo:", error)
   );
 
@@ -84,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // 🔹 Evita que el modelo gire más de 90° hacia atrás
       model.rotation.y = THREE.MathUtils.clamp(model.rotation.y, -Math.PI / 2, Math.PI / 2);
 
-      if (!isMobile){
+      if (!isMobile) {
         controls.autoRotateSpeed = 0.2;
 
       }

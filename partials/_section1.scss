@@ -16,7 +16,11 @@
         display: block;
         background-color: transparent;
         animation: tornasol 4s infinite alternate;
-        filter: drop-shadow(2px 4px 6px black);
+        // filter: drop-shadow(2px 4px 2px black);
+        // filter: sepia(1);
+        filter: brightness(0);
+        // filter: saturate(0);
+
         z-index: 8;
 
         &-container {
@@ -44,11 +48,12 @@
 
     &-title {
         font-size: 126px;
-        font-family: "Prompt", serif;
+        font-family: "Bebas Neue", serif;
     }
 
     &-text {
-        font-family: "Prompt", serif;
+        // font-family: "Prompt", serif;
+        font-family: "Bebas Neue", serif;
     }
 }
 
@@ -58,5 +63,14 @@
     }
     100% {
         filter: hue-rotate(360deg);
+    }
+}
+
+
+@media (max-width:991.98px) {
+    .section1 {
+        &-model {
+            animation: none;
+        }
     }
 }
