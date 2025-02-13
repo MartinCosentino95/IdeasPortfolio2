@@ -21,11 +21,13 @@
             background-color: #000000da;
             width: 100%;
             margin-top: 10vh;
+            position: relative;
+            z-index: 2;
         }
     }
     &-container {
         position: relative;
-        min-height: 750px;
+        min-height: 850px;
         z-index: 9;
         width: 100%;
         overflow: hidden;

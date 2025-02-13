@@ -2,7 +2,7 @@
 @import "partials/section1";
 @import "partials/3Dbg";
 @import "partials/loader";
-
+@import "partials/mcportfolio-proyects";
 
 body {
     // background: #b39978;
@@ -21,10 +21,15 @@ body {
         text-decoration: none;
         width: 250px !important;
         font-family: "Prompt", serif;
-        transition: .5s ease-in;
+        transition: 0.5s ease-in;
         &:hover {
             background-color: #000;
             color: white;
         }
+    }
+    &-title {
+        font-size: 126px;
+        font-family: "Bebas Neue", serif;
+        
     }
 }

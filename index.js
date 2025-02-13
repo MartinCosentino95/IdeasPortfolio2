@@ -40,7 +40,7 @@ const section1Animation = gsap.to("#section1", {
 });
 
 // 🕒 Control de la pantalla de carga
-window.modelsToLoad = 3;  // Número total de modelos
+window.modelsToLoad = 4;  // Número total de modelos
 window.modelsLoaded = 0;  // Contador de modelos ya cargados
 
 window.checkAllModelsLoaded = function () {
