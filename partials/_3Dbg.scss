@@ -22,7 +22,7 @@
             width: 100%;
             margin-top: 10vh;
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
     }
     &-container {
@@ -46,11 +46,10 @@
             text-decoration: none;
             font-size: 23px;
 
-            &:hover{
+            &:hover {
                 text-decoration: underline;
                 color: #ffbb00;
                 // font-size: 25px;
-
             }
         }
     }
@@ -59,5 +58,9 @@
 @media (max-width: 575.98px) {
     .model-bg-title {
         font-size: 60px;
+
+        &-container {
+            z-index: 2;
+        }
     }
 }

@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       model2.scale.set(1.2, 1.2, 1.2);
 
       controls2.enableRotate = false;
-      controls2.autoRotate= true;
+      controls2.autoRotate= false;
       controls2.autoRotateSpeed = 1.3;
 
     } else {

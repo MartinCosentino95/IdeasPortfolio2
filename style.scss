@@ -3,6 +3,7 @@
 @import "partials/3Dbg";
 @import "partials/loader";
 @import "partials/mcportfolio-proyects";
+@import "partials/mcportfolio-tech";
 
 body {
     // background: #b39978;
@@ -21,7 +22,8 @@ body {
         text-decoration: none;
         width: 250px !important;
         font-family: "Prompt", serif;
-        transition: 0.5s ease-in;
+        // transition: 0.5s ease-in;
+
         &:hover {
             background-color: #000;
             color: white;
@@ -30,6 +32,12 @@ body {
     &-title {
         font-size: 126px;
         font-family: "Bebas Neue", serif;
-        
+    }
+}
+
+@media (max-width: 991.98px) {
+    .mcportfolio-title {
+        font-size: 86px;
+        font-family: "Bebas Neue", serif;
     }
 }

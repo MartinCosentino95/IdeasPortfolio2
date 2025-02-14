@@ -47,13 +47,19 @@
 
         margin-bottom: 30px;
         z-index: 10;
+        opacity: 0;
 
-        &-title{
+        &:hover {
+            transform: rotate(360deg) !important;
+            transition: 0.3s;
+        }
+
+        &-title {
             margin-bottom: 1rem;
             margin-right: 50px;
         }
 
-        &-text{
+        &-text {
             padding-right: 40px;
             font-size: 22px;
         }
@@ -69,7 +75,7 @@
             width: 65px !important;
             object-fit: cover;
             border-radius: 0 16px 0 16px;
-            transition: 1s ease-out;
+            transition: .8s ease-out;
             filter: grayscale(1);
 
             &:hover {
@@ -77,17 +83,22 @@
                 height: 100% !important;
                 z-index: 19;
                 filter: grayscale(0);
-
             }
         }
 
-        &-link{
+        &-link {
             animation: tornasol 4s infinite alternate;
 
-            &-container{
+            &-container {
                 display: flex;
                 justify-content: flex-start;
             }
         }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .mcportfolio-proyects-card {
+        transform: rotate(360deg) !important;
     }
 }

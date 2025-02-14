@@ -19,6 +19,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/InertiaPlugin.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -73,11 +76,11 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-5">
-            <h2 class="mcportfolio-title">About me ~/*</h2>
+            <h2 class="mcportfolio-title" id="TitleAboutMe">About me ~/*</h2>
             <p class="section1-text">
               I am a front-end developer with experience in HTML, CSS and
               JavaScript, with a strong self-taught spirit that drives me to
-              explore new technologies and challenge the limits of the
+              View Project new technologies and challenge the limits of the
               conventional. My curiosity led me to dive into Three.js and GSAP,
               tools with which I seek to transform digital experiences into
               something more than simple interfaces: into interactive spaces
@@ -112,7 +115,7 @@
               <div class="col-lg-6">
                 <div class="model-bg-title-container">
                   <h1 class="model-bg-title">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Turning ideas into impactful digital experiences.
                   </h1>
                 </div>
 
@@ -148,7 +151,7 @@
             ></canvas>
           </div>
           <div class="col-lg-9 border">
-            <h2 class="mcportfolio-title">Proyects ~/*</h2>
+            <h2 class="mcportfolio-title mb-5" id="TitleProyects">Portfolio ~/*</h2>
             <div class="row">
               <!-- Card -->
               <div class="col-lg-4">
@@ -160,7 +163,8 @@
                   />
                   <h2 class="mcportfolio-proyects-card-title">Ex portfolio</h2>
                   <p class="mcportfolio-proyects-card-text">
-                    My first Front End Developer portfolio. <br> "My first steps"
+                    My first Front End Developer portfolio. <br />
+                    "My first steps"
                   </p>
                   <p class="mcportfolio-proyects-card-techs">
                     <i class="fab fa-react" aria-hidden="true"></i>
@@ -172,7 +176,7 @@
                       href="https://martincosentinoportfolio.netlify.app/"
                       class="mcportfolio-proyects-card-link"
                     >
-                      Conocelo</a
+                      View Project </a
                     >
                   </div>
                 </div>
@@ -201,7 +205,7 @@
                       href="https://giphyexpertapp.netlify.app/"
                       class="mcportfolio-proyects-card-link"
                     >
-                      Conocelo</a
+                      View Project </a
                     >
                   </div>
                 </div>
@@ -230,7 +234,7 @@
                       href="https://heroeapp.netlify.app/"
                       class="mcportfolio-proyects-card-link"
                     >
-                      Conocelo</a
+                      View Project </a
                     >
                   </div>
                 </div>
@@ -262,7 +266,7 @@
                       href="https://martincosentino.github.io/CotizadorCritpoMonedas/"
                       class="mcportfolio-proyects-card-link"
                     >
-                      Conocelo</a
+                      View Project </a
                     >
                   </div>
                 </div>
@@ -292,7 +296,7 @@
                       href="https://martincosentino.github.io/prestamosApp/"
                       class="mcportfolio-proyects-card-link"
                     >
-                      Conocelo</a
+                      View Project </a
                     >
                   </div>
                 </div>
@@ -323,7 +327,7 @@
                       href="https://martincosentino.github.io/Carrito/"
                       class="mcportfolio-proyects-card-link"
                     >
-                      Conocelo</a
+                      View Project </a
                     >
                   </div>
                 </div>
@@ -355,14 +359,14 @@
                       href="https://martincosentino.github.io/NamesGenerator/"
                       class="mcportfolio-proyects-card-link"
                     >
-                      Conocelo</a
+                      View Project </a
                     >
                   </div>
                 </div>
               </div>
 
-                <!-- Card -->
-                <!-- <div class="col-lg-4">
+              <!-- Card -->
+              <!-- <div class="col-lg-4">
                   <div class="mcportfolio-proyects-card">
                     <img
                       src="/imgs/NamesGeneratoer.png"
@@ -387,11 +391,32 @@
                         href="https://martincosentino.github.io/NamesGenerator/"
                         class="mcportfolio-proyects-card-link"
                       >
-                        Conocelo</a
+                        View Project </a
                       >
                     </div>
                   </div>
                 </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="my-5">
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12 px-0">
+            <div class="mcportfolio-tech-stack-container">
+              <i class="fab fa-html5 mcportfolio-tech" aria-hidden="true"></i>
+              <i class="fab fa-css3-alt mcportfolio-tech" aria-hidden="true"></i>
+              <i class="fab fa-js mcportfolio-tech" aria-hidden="true"></i>
+              <i class="fab fa-sass mcportfolio-tech" aria-hidden="true"></i>
+              <i class="fab fa-bootstrap mcportfolio-tech" aria-hidden="true"></i>
+              <i class="fab fa-react mcportfolio-tech" aria-hidden="true"></i>
+              <i class="fas fa-palette mcportfolio-tech" aria-hidden="true"></i>
+              <i class="fab fa-node-js mcportfolio-tech" aria-hidden="true"></i>
+              
             </div>
           </div>
         </div>
