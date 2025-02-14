@@ -1,8 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(Draggable);
-gsap.registerPlugin(InertiaPlugin);
-gsap.config({ trialWarn: false });
+// gsap.registerPlugin(InertiaPlugin);
+// gsap.config({ trialWarn: false });
+
 // Duplicamos el contenido para crear un efecto de "marquee" sin cortes
 const banner = document.querySelector(".mcportfolio-banner-title-tracker");
 const text = banner.innerHTML;
@@ -92,31 +93,36 @@ gsap.to("#TitleProyects", {
 const PrimaryButton = document.querySelector('.mcportfolio-button');
 
 // Efecto hover
-gsap.fromTo(PrimaryButton, 
-    { scale: 1, 
+gsap.fromTo(PrimaryButton,
+    {
+        scale: 1,
         // backgroundColor: "#3498db"
-     }, 
-    { 
-      scale: 1.1, 
-    //   backgroundColor: "#2980b9", 
-      duration: 0.3, 
-      ease: "power1.out", 
-      paused: true 
+    },
+    {
+        scale: 1.1,
+        //   backgroundColor: "#2980b9", 
+        duration: 0.3,
+        ease: "power1.out",
+        paused: true
     });
 
- // Activar el hover
- PrimaryButton.addEventListener('mouseenter', () => {
-    gsap.to(PrimaryButton, { scale: 1.1, 
+// Activar el hover
+PrimaryButton.addEventListener('mouseenter', () => {
+    gsap.to(PrimaryButton, {
+        scale: 1.1,
         // backgroundColor: "#2980b9",
-         duration: 0.3, ease: "power1.out" });
-  });
+        duration: 0.3, ease: "power1.out"
+    });
+});
 
-  // Desactivar el hover
-  PrimaryButton.addEventListener('mouseleave', () => {
-    gsap.to(PrimaryButton, { scale: 1,
+// Desactivar el hover
+PrimaryButton.addEventListener('mouseleave', () => {
+    gsap.to(PrimaryButton, {
+        scale: 1,
         //  backgroundColor: "#3498db",
-          duration: 0.3, ease: "power1.out" });
-  });
+        duration: 0.3, ease: "power1.out"
+    });
+});
 // DRAG AND DROP TECHS
 
 const icons = document.querySelectorAll(".mcportfolio-tech");
