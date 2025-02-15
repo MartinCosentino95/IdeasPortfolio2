@@ -50,6 +50,47 @@
     </div>
 
     <header id="headerSection">
+      <!-- nav -->
+
+      <section class="mb-3 w-100 position-fixed" style="z-index: 999">
+        <div class="container-fluid">
+          <div class="row">
+            <div
+              class="col-12 px-0 d-flex justify-content-end"
+              style="background-color: #f1ece01e"
+            >
+              <div
+                class="collapse mcportfolio-navbar-collapse px-4 py-4 w-100"
+                id="navbarToggleExternalContent"
+              >
+                <h5 class="text-body-emphasis h4">Collapsed content</h5>
+                <span class="text-body-secondary"
+                  >Toggleable via the navbar brand.</span
+                >
+              </div>
+              <nav class="navbar navbar-dark">
+                <div class="container-fluid">
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent"
+                    aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span
+                      class="navbar-toggler-icon"
+                      style="filter: invert(1)"
+                    ></span>
+                  </button>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="pb-5 mcportfolio-banner">
         <div class="container-fluid">
           <div class="row">
@@ -99,7 +140,7 @@
             <a href="#" class="mcportfolio-button mt-3">Click aqui</a>
           </div>
           <div class="col-lg-7">
-            <div class="section1-model-container">
+            <div class="section1-model-container mcportfolio-model-container">
               <canvas class="w-100 section1-model" id="3DObject2"></canvas>
             </div>
           </div>
@@ -110,7 +151,7 @@
     <section class="my-5" id="sectionBG">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12 model-bg-container">
+          <div class="col-12 mcportfolio-model-container model-bg-container">
             <div class="row">
               <div class="col-lg-6">
                 <div class="model-bg-title-container">
@@ -143,7 +184,7 @@
     <section class="my-5 mcportfolio-proyects-section">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-3 mcportfolio-proyects-model-container">
+          <div class="col-lg-3 mcportfolio-proyects-model-container mcportfolio-model-container">
             <!-- Hacer sticky -->
             <canvas
               id="Person3D"
@@ -408,7 +449,7 @@
       <div class="container-fluid px-0">
         <div class="row">
           <div class="col-12 px-0">
-            <div class="mcportfolio-tech-stack-container">
+            <div class="mcportfolio-tech-stack-container w-100">
               <i class="fab fa-html5 mcportfolio-tech" aria-hidden="true"></i>
               <i
                 class="fab fa-css3-alt mcportfolio-tech"

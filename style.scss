@@ -4,7 +4,9 @@
 @import "partials/loader";
 @import "partials/mcportfolio-proyects";
 @import "partials/mcportfolio-tech";
+@import "partials/mcportfolio-navbar";
 
+html,
 body {
     // background: #b39978;
     overflow-x: hidden;
@@ -36,8 +38,23 @@ body {
 }
 
 @media (max-width: 991.98px) {
-    .mcportfolio-title {
-        font-size: 86px;
-        font-family: "Bebas Neue", serif;
+    .mcportfolio {
+        &-model {
+            &-container {
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    position: absolute;
+                    left: 0;
+                    z-index: 12;
+                }
+            }
+        }
+        &-title {
+            font-size: 86px;
+            font-family: "Bebas Neue", serif;
+        }
     }
 }

@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderer.setSize(window.innerWidth, window.innerHeight, false);
   });
 
-  // 🔹 Aplicamos mousemove en todos los dispositivos (incluyendo mobile)
   window.addEventListener("mousemove", (event) => {
     const halfWidth = window.innerWidth / 2;
     const halfHeight = window.innerHeight / 2;
@@ -77,18 +76,17 @@ document.addEventListener("DOMContentLoaded", () => {
     controls.update();
 
     if (model) {
-      // 🔹 El modelo responde al movimiento del mouse/touch en todos los dispositivos
-      model.rotation.y = THREE.MathUtils.lerp(model.rotation.y, mouseX * Math.PI * 0.3, 0.03);
-      model.rotation.x = THREE.MathUtils.clamp(
-        THREE.MathUtils.lerp(model.rotation.x, -mouseY * Math.PI * 0.1, 0.03),
-        -0.3, 0.3
-      );
-
-      // 🔹 Evita que el modelo gire más de 90° hacia atrás
-      model.rotation.y = THREE.MathUtils.clamp(model.rotation.y, -Math.PI / 2, Math.PI / 2);
 
       if (!isMobile) {
         controls.autoRotateSpeed = 0.2;
+
+        model.rotation.y = THREE.MathUtils.lerp(model.rotation.y, mouseX * Math.PI * 0.3, 0.03);
+        model.rotation.x = THREE.MathUtils.clamp(
+          THREE.MathUtils.lerp(model.rotation.x, -mouseY * Math.PI * 0.1, 0.03),
+          -0.3, 0.3
+        );
+        model.rotation.y = THREE.MathUtils.clamp(model.rotation.y, -Math.PI / 2, Math.PI / 2);
+
 
       }
     }

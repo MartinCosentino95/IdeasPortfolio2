@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isMobile = window.innerWidth <= 768; // 📱 Detecta pantallas pequeñas
 
     if (isMobile) {
-      camera2.position.set(-550, 250, 500); // Posición original
+      camera2.position.set(-570, 250, 250); // Posición original
       model2.scale.set(1.2, 1.2, 1.2);
 
       controls2.enableRotate = false;

@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             model2.scale.set(6.7, 7, 6.7);
             model2.position.y = -7.2; // Usamos asignación directa para evitar acumulaciones
 
-            controls2.enableRotate = true;
+            controls2.enableRotate = false;
             controls2.autoRotate = true;
             controls2.autoRotateSpeed = 2.2;
             controls2.enableZoom = false;

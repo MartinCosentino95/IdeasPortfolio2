@@ -75,7 +75,7 @@
             width: 65px !important;
             object-fit: cover;
             border-radius: 0 16px 0 16px;
-            transition: .8s ease-out;
+            transition: 0.8s ease-out;
             filter: grayscale(1);
 
             &:hover {
@@ -99,6 +99,6 @@
 
 @media (max-width: 575.98px) {
     .mcportfolio-proyects-card {
-        transform: rotate(360deg) !important;
+        transform: rotate(357deg) !important;
     }
 }
