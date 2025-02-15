@@ -57,13 +57,26 @@ gsap.to(".mcportfolio-proyects-card", {
 
 
 gsap.to("#TitleProyects", {
-    duration: 2,
+    duration: 3,
     text: "Proyects ~/*",
     ease: "none",
     yoyo: true,
+    repeat: -1,
+    repeatDelay: 2,
     scrollTrigger: {
         trigger: "#TitleProyects"
     }
+
+})
+
+gsap.to("#offcanvasNavbarLabel", {
+    duration: 1.3,
+    delay: 1,
+    text: "🅜🅔🅝🅤",
+    ease: "none",
+    yoyo: true,
+    repeat: -1,
+    repeatDelay: 2 
 
 })
 
@@ -177,6 +190,37 @@ function resolveCollision(icon1, icon2) {
 }
 
 // 
+
+// Script para marcar el active en el menú
+
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger); // Asegura que ScrollTrigger está activo
+
+    let sections = document.querySelectorAll("section"); // Todas las secciones
+    let navLinks = document.querySelectorAll(".mcportfolio-navbar-offcanvas-list-item a");
+
+    sections.forEach((section) => {
+        ScrollTrigger.create({
+            trigger: section,
+            start: "top 50%", // Activa cuando la sección está en la mitad superior de la pantalla
+            end: "bottom 50%", // Se desactiva cuando la sección sale de la mitad inferior
+            toggleActions: "play none none none", // Asegura que solo se activa una vez
+            onEnter: () => setActive(section), // Llama a setActive al entrar
+            onEnterBack: () => setActive(section), // También al hacer scroll hacia arriba
+        });
+    });
+
+    function setActive(section) {
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${section.id}`) {
+                link.classList.add("active");
+            }
+        });
+    }
+});
+
+
 
 // 🕒 Control de la pantalla de carga
 window.modelsToLoad = 4;  // Número total de modelos

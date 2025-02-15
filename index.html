@@ -48,49 +48,59 @@
       <div class="spinner"></div>
       <p>Bienvenido!</p>
     </div>
-
-    <header id="headerSection">
-      <!-- nav -->
-
-      <section class="mb-3 w-100 position-fixed" style="z-index: 999">
+    <!-- nav -->
+    <section class="mcportfolio-navbar-section">
+      <nav class="navbar mcportfolio-navbar bg-body-tertiary fixed-top">
         <div class="container-fluid">
-          <div class="row">
-            <div
-              class="col-12 px-0 d-flex justify-content-end"
-              style="background-color: #f1ece01e"
-            >
-              <div
-                class="collapse mcportfolio-navbar-collapse px-4 py-4 w-100"
-                id="navbarToggleExternalContent"
+          <a class="navbar-brand mcportfolio-navbar-brand" href="#"
+            >MC PORTFOLIO</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span
+              class="navbar-toggler-icon mcportfolio-navbar-toggler-icon"
+              style="filter: invert(1)"
+            ></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body mcportfolio-navbar-offcanvas-body">
+              <ul
+                class="navbar-nav mcportfolio-navbar-offcanvas-list justify-content-end flex-grow-1 pe-3"
               >
-                <h5 class="text-body-emphasis h4">Collapsed content</h5>
-                <span class="text-body-secondary"
-                  >Toggleable via the navbar brand.</span
-                >
-              </div>
-              <nav class="navbar navbar-dark">
-                <div class="container-fluid">
-                  <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggleExternalContent"
-                    aria-controls="navbarToggleExternalContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span
-                      class="navbar-toggler-icon"
-                      style="filter: invert(1)"
-                    ></span>
-                  </button>
-                </div>
-              </nav>
+                <li class="nav-item mcportfolio-navbar-offcanvas-list-item">
+                  <a class="nav-link" href="#section1">About me</a>
+                </li>
+                <li class="nav-item mcportfolio-navbar-offcanvas-list-item">
+                  <a class="nav-link" href="#proyects-section">Proyects</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
+      </nav>
+    </section>
 
+    <header id="headerSection">
       <section class="pb-5 mcportfolio-banner">
         <div class="container-fluid">
           <div class="row">
@@ -137,7 +147,20 @@
               desafío. -->
             </p>
             <!-- Call to action -->
-            <a href="#" class="mcportfolio-button mt-3">Click aqui</a>
+            <div class="d-flex align-items-center mt-3">
+              <a href="#" class="mcportfolio-button">Click aqui</a>
+              <a
+                href="https://www.instagram.com/martin.cosentino/"
+                class="mcportfolio-link-icon"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+
+              <a
+                href="https://www.instagram.com/martin.cosentino/"
+                class="mcportfolio-link-icon"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </div>
           </div>
           <div class="col-lg-7">
             <div class="section1-model-container mcportfolio-model-container">
@@ -181,10 +204,12 @@
       </div>
     </section>
 
-    <section class="my-5 mcportfolio-proyects-section">
+    <section class="my-5 mcportfolio-proyects-section" id="proyects-section">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-3 mcportfolio-proyects-model-container mcportfolio-model-container">
+          <div
+            class="col-lg-3 mcportfolio-proyects-model-container mcportfolio-model-container"
+          >
             <!-- Hacer sticky -->
             <canvas
               id="Person3D"

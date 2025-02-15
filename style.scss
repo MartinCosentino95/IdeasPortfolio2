@@ -35,6 +35,18 @@ body {
         font-size: 126px;
         font-family: "Bebas Neue", serif;
     }
+    &-link {
+        &-icon {
+            font-size: 25px;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            margin-bottom: 0;
+            text-decoration: none;
+            color: black;
+            margin-left: 5px;
+        }
+    }
 }
 
 @media (max-width: 991.98px) {
