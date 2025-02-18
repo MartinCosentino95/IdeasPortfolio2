@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
       model2.scale.set(1.2, 1.2, 1.2);
 
       controls2.enableRotate = false;
-      controls2.autoRotate= false;
+      controls2.autoRotate = false;
       controls2.autoRotateSpeed = 1.3;
 
     } else {
-      camera2.position.set(-550, 250, 500); // Posición original
+      camera2.position.set(-450, 250, 500); // Posición original
     }
 
     // camera2.lookAt(new THREE.Vector3(0, 1.5, 0));

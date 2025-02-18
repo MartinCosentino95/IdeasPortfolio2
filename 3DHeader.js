@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   controls.enablePan = false;
   controls.enableRotate = false;
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.3;
+  controls.autoRotateSpeed = 0.2;
 
   // Luces
   // scene.add(new THREE.AmbientLight(0xffffff, 1));
