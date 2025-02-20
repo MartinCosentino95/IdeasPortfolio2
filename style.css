@@ -83,7 +83,7 @@ header::before {
 #section1 {
   -webkit-clip-path: circle(0% 0%, 0% 100%, 100% 100%);
           clip-path: circle(0% 0%, 0% 100%, 100% 100%);
-  opacity: 0;
+  opacity: 1 !important;
 }
 
 .section1-model {
