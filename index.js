@@ -27,21 +27,21 @@ const headerAnimation = gsap.to("#headerSection", {
 });
 
 // Animación de section1 con ScrollTrigger (PAUSADA AL INICIO)
-const section1Animation = gsap.to("#section1", {
-    scrollTrigger: {
-        trigger: "#section1",
-        scroll: "body",
-        start: "top 80%",
-        end: "top 0%",
-        markers: false,
-        toggleActions: "restart none none reverse"
-    },
-    clipPath: "circle(100% at 50% 50%)",
-    duration: 2.5,
-    ease: "power2.out",
-    opacity: 1,
-    paused: true,
-});
+// const section1Animation = gsap.to("#section1", {
+//     scrollTrigger: {
+//         trigger: "#section1",
+//         scroll: "body",
+//         start: "top 80%",
+//         end: "top 0%",
+//         markers: false,
+//         toggleActions: "restart none none reverse"
+//     },
+//     clipPath: "circle(100% at 50% 50%)",
+//     duration: 2.5,
+//     ease: "power2.out",
+//     opacity: 1,
+//     paused: true,
+// });
 
 gsap.to(".mcportfolio-proyects-card", {
 
@@ -250,7 +250,7 @@ window.checkAllModelsLoaded = function () {
             // 🔥 Activamos las animaciones después de que la pantalla de carga desaparezca
             marqueeAnimation.play();
             headerAnimation.play();
-            section1Animation.play();
+            // section1Animation.play();
         } else {
             console.error("❌ Error: No se encontró el elemento #pageLoader en el DOM.");
         }
