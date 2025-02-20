@@ -27,6 +27,8 @@
   width: max-content; /* Importante para evitar cortes */
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 .mcportfolio-banner-title-container {
   overflow-x: hidden;
@@ -44,6 +46,7 @@
   bottom: 0;
   margin: auto;
   overflow-x: hidden;
+  filter: brightness(0);
 }
 
 header {

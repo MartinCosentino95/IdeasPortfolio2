@@ -29,6 +29,8 @@
       width: max-content; /* Importante para evitar cortes */
       overflow: hidden;
       white-space: nowrap;
+      position: relative;
+      z-index: 1;
     }
 
     &-container {
@@ -50,6 +52,7 @@
       margin: auto;
       overflow-x: hidden;
       // color: #000 !important;
+      filter: brightness(0);
     }
   }
 }
