@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     controls.autoRotateSpeed = 0.3;
 
     // Luces
-    // scene.add(new THREE.AmbientLight(0xffffff, 1));
-    // const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    // directionalLight.position.set(5, 10, 7.5);
-    // scene.add(directionalLight);
+    scene.add(new THREE.AmbientLight(0xffffff, 1));
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionalLight.position.set(5, 10, 7.5);
+    scene.add(directionalLight);
 
     let model, mixer;
     let mouseX = 0, mouseY = 0;
