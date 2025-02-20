@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     window.addEventListener("resize", () => {
-        if (!model2) return; // ✅ Solo ejecuta si el modelo ya está listo
+        if (!model2) return; 
         camera2.aspect = window.innerWidth / window.innerHeight;
         camera2.updateProjectionMatrix();
         renderer2.setSize(window.innerWidth, window.innerHeight, false);

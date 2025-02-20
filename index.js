@@ -4,6 +4,9 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin, Draggable);
 const banner = document.querySelector(".mcportfolio-banner-title-tracker");
 if (banner) banner.innerHTML += banner.innerHTML;
 
+const isMobile = window.innerWidth <= 991;
+
+
 // FUNCIONES PARA ANIMACIONES
 const createMarquee = () => gsap.to(".mcportfolio-banner-title-tracker", { x: "-50%", duration: 25, ease: "linear", repeat: -1, paused: true });
 const revealHeader = () => gsap.to("#headerSection", { duration: 1.5, ease: "power2.out", clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", paused: true });
@@ -15,7 +18,7 @@ const animateText = (id, text) => gsap.to(id, { duration: 3, text, ease: "none",
 // EJECUTAR ANIMACIONES
 const marqueeAnimation = gsap.to(".mcportfolio-banner-title-tracker", {
     xPercent: -50, // Más eficiente que "x: '-50%'"
-    duration: 25,
+    duration: isMobile ? 50 : 35,
     ease: "linear",
     repeat: -1
 });
